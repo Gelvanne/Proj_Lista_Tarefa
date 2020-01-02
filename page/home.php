@@ -27,8 +27,8 @@ if ($SQLError == 0) {
                      
         if ($ResultadoTarefas->num_rows > 0) {
                      
-            while ($Tarefas = mysqli_fetch_object($ResultadoTarefas)) {
-                $Tarefas[] = $Tarefas;
+            while ($Tarefa = mysqli_fetch_object($ResultadoTarefas)) {
+                $Tarefas[] = $Tarefa;
                 
             }
         }
@@ -61,19 +61,61 @@ if ($SQLError == 0) {
 <?php if (isset($_SESSION["erroAdicionarTarefa"])) {?>
 <p>
 <?php echo $_SESSION["erroAdicionarTarefa"];?>
-<p>
+
+		
+		
+		
+		
+		
+		<p>
 <?php } else if (isset($_SESSION["sucessoAdicionarTarefa"])){?>
-<p>
+
+		
+		
+		
+		
+		
+		<p>
 <?php echo $_SESSION["sucessoAdicionarTarefa"];?>
-<p>
+
+		
+		
+		
+		
+		
+		<p>
 <?php }?>
+	
+	
+	
+	
 	
 	</fieldset>
 
-	<h2>Suas tarefas:</h2>
+	<fieldset>
+		<legend>
+			<h2>Suas tarefas:</h2>
+		</legend>
+		<table>
+			<thead>
+				<tr>
+					<td><font color="blue" size="+2"><strong>Select:</strong></font></td>
+					<td><font color="blue" size="+2"><strong>Usuario:</strong></font></td>
+					<td><font color="blue" size="+2"><strong>Descrição Tarefa:</strong></font></td>
+					<td><font color="blue" size="+2"><strong>Status tarefa:</strong></font></td>
+					</tr>
+			</thead>
+			<tbody>
 <?php foreach ($Tarefas as $t){?>
-<p> <?php echo $t->tarefas_titulo;?> (<?php echo $t->tarefas_finalizada ? "Finalizada" : "em Aberto"; ?>) </p>
-<?php }?>
-
+<tr>
+					<td>	<input type="checkbox" name="IDs[]" value = "<?php echo $t->tarefas_finalizada = ("true");?>"></td>
+					<td>	<p>[<?php echo $t->usuario_id;?>]</p></td>
+					<td>	<p> <?php echo $t->tarefas_titulo;?></p></td>
+					<td>	<p> (<?php echo $t->tarefas_finalizada ? "Finalizada" : "em Aberto"; ?>) </p>
+<?php }?></td>
+			
+			</tbody>
+		</table>
+	</fieldset>
 </body>
 </html>

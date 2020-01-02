@@ -25,7 +25,7 @@ if($resultadoTarefa) {
     if ($linhasAfetadas > 0) {
         unset($_SESSION["erroAdicionarTarefa"]);
         $_SESSION["sucessoAdicionarTarefa"] = "Tarefa Adicionada com Sucesso.";
-        header("Location: /Proj_Lista_Tarefas/page/Login.php");
+        header("Location: /Proj_Lista_Tarefas/page/home.php");
         exit();
                 
     }
