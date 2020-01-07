@@ -1,34 +1,23 @@
 <?php session_start();?>
+
+
 <!DOCTYPE html>
-<html>
+<html lang="">
 <head>
 <meta charset="UTF-8">
 <title>App.Tarefas:Login</title>
+<link rel="stylesheet" href="/Proj_Lista_Tarefas/css/styles.css">
 </head>
 <body>
-	<p>
-	
-	<h3>
+<div id="corpo-form">
+<h1>Entrar</h1>
+	<form action="/proj_lista_Tarefas/action/ValidateLogin.php" method="POST">
+		<input type="email" placeholder="e_mail" name="fL_email"> 
+		<input type="password" placeholder="Senha" name="fL_senha"> 
+		<input type="submit" value="Acessar">
+		<a href="cadastrar.php">Ainda não é inscrito? <strong>Cadastre-se!</strong></a>
 		<a href="/proj_lista_Tarefas/index.html">Inicial</a>
-	</h3>
-	<fieldset>
-
-		<legend>
-			<h2>Login APP.Tarefas</h2>
-		</legend>
-
-		<form action="/proj_lista_Tarefas/action/ValidateLogin.php"
-			method="POST">
-			<p>
-				<label>E-mail:</label> <input name="fL_email" type="email">
-			</p>
-			<p>
-				<label>Senha:</label> <input name="fL_senha" type="password">
-			</p>
-			<p>
-				<input type="submit" value="Acessar">
-			</p>
-		</form>
-	</fieldset>
+	</form>
+</div>
 </body>
-</html>
+	

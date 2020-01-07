@@ -1,0 +1,66 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-image: url("http://localhost/Proj_Lista_Tarefas/img/plan1.jpg"); /*Imagem de fundo*/
+	background-position:center; /*posicionamento da imagem*/
+	color: black; /* cor branca do corpo do texto (Entrar)*/
+	font-family: arial; /* fonte arial do corpo do texto (Entrar)*/
+	}
+
+input {
+	display: block; /*Coloca os inputs um embaixo do outro.*/
+	height: 55px; /* Altura dos inputs */
+	width: 400px; /*largura dos inputs */
+	margin: 10px; /* espaçamento entre os inputs*/
+	border-radius: 30px; /* Borda arredondada*/
+	border: 1px solid black; /* Borda solida  da cor preta*/
+	font-size: 16pt; /* Ajustando o tamanho da fonte*/
+	padding: 10px 20px;
+	/* ajustando o placeholder (o texto dentro da caixinha 10px em cima e embaixo e 20px  na esquerda e na direita)*/
+	background-color: rgba(255,255,255,0.01); /* RGBA com halfa; 255,255,255,255,(cor branca do RGB 0.01 (nivel da transparencia)*/
+	color: black; /* cor do texto dentro dos inputs*/
+	outline: none;
+}
+::-webkit-input-placeholder{
+	color: black; /* Codigo para deixar branco o placeholder (texto padrao dentro do input)*/
+}
+
+#corpo-form {
+	/* background-color: grey; /* fundo no formulario só para nortear a construção*/
+	width: 420px; /* Largura da div*/
+	margin: 130px auto 0px auto;
+	/*Centralizar usando o margin: 150px em cima auto (automatico do lado) 0px embaixo e auto (automático do outro lado) */
+}
+#corpo-form-cad{
+	/* background-color: grey; /* fundo no formulario só para nortear a construção*/
+	width: 420px; /* Largura da div*/
+	margin: 100px auto 0px auto;
+	/*Centralizar usando o margin: 150px em cima auto (automatico do lado) 0px embaixo e auto (automático do outro lado) */
+}
+#corpo-form h1{
+	text-align: left; /* alinhar só a tag h1 do corpo do texto (Entrar)*/
+	padding: 20px;
+	color: black;
+}
+#corpo-form-cad h1{
+	text-align: center; /* alinhar só a tag h1 do corpo do texto (Entrar)*/
+	padding: 20px;
+}
+a{
+	color: black; /* Link da tag "A" alterando a cor branca*/
+	text-decoration: none; /* Link da tag "A" retirando o underline*/
+	text-align: center; /* alinhar texto da tag "A" não funciona sozinho porque precisa do display block que vai logo abaixo*/
+	display: block;
+}
+a:hover {
+	text-decoration: underline; /* Link da tag "A" quando passar o mouse em cima (a:hover) mostra o underline*/
+}
+
+input[type=submit]{
+	background-color: #6a5acd; /*Trocando cor do botão submit*/
+	border: none;  /*Tirando a borda preta do botão submit*/
+	cursor: pointer; /*Mostra a mãozinha quando posicionar em cima do submit*/
+}

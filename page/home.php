@@ -37,27 +37,32 @@ if ($SQLError == 0) {
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="">
 <head>
 <meta charset="UTF-8">
 <title>App.Tarefas:Home</title>
+<link rel="stylesheet" href="/Proj_Lista_Tarefas/css/styles.css">
 </head>
 <body>
-	<p>
-	
-	
-	<h3>
-		<a href="/Proj_Lista_Tarefas/action/Logout.php">Logout</a>
-	</h3>
+	<div id="corpo-form-cad">
+		<p>
+		
+			<a href="/Proj_Lista_Tarefas/action/Logout.php">Logout</a> 
+		
+		</h1>
 	<h1>HOME</h1>
 	<fieldset>
 		<legend> Nova Tarefa</legend>
 		<form action="/Proj_Lista_Tarefas/action/incluir.php" method="POST">
 			<p>
-				<label>Título:</label><input type="text" name="fH_titulo" />
+				<input type="text" placeholder="Adicionar uma Tarefa" "fH_titulo" />
 			</p>
 			<input type="submit" value="Adicionar" />
 		</form>
+		
+		
+	
+	</div>
 <?php if (isset($_SESSION["erroAdicionarTarefa"])) {?>
 <p>
 <?php echo $_SESSION["erroAdicionarTarefa"];?>
@@ -67,7 +72,10 @@ if ($SQLError == 0) {
 		
 		
 		
-		<p>
+		
+	
+	
+	<p>
 <?php } else if (isset($_SESSION["sucessoAdicionarTarefa"])){?>
 
 		
@@ -75,7 +83,10 @@ if ($SQLError == 0) {
 		
 		
 		
-		<p>
+		
+	
+	
+	<p>
 <?php echo $_SESSION["sucessoAdicionarTarefa"];?>
 
 		
@@ -83,8 +94,14 @@ if ($SQLError == 0) {
 		
 		
 		
-		<p>
+		
+	
+	
+	<p>
 <?php }?>
+	
+	
+	
 	
 	
 	
@@ -108,11 +125,14 @@ if ($SQLError == 0) {
 			<tbody>
 <?php foreach ($Tarefas as $t){?>
 <tr>
-					<td>	<input type="checkbox" name="IDs[]" value = "<?php echo $t->tarefas_finalizada = ("true");?>"></td>
+					<td>	<input type="checkbox" name="IDs[]"
+						value="<?php echo $t->tarefas_finalizada = ("true");?>"></td>
 					<td>	<p>[<?php echo $t->usuario_id;?>]</p></td>
 					<td>	<p> <?php echo $t->tarefas_titulo;?></p></td>
 					<td>	<p> (<?php echo $t->tarefas_finalizada ? "Finalizada" : "em Aberto"; ?>) </p>
 <?php }?></td>
+			
+			
 			
 			</tbody>
 		</table>
