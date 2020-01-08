@@ -45,68 +45,26 @@ if ($SQLError == 0) {
 </head>
 <body>
 	<div id="corpo-form-cad">
-		<p>
-		
-			<a href="/Proj_Lista_Tarefas/action/Logout.php">Logout</a> 
-		
-		</h1>
-	<h1>HOME</h1>
-	<fieldset>
-		<legend> Nova Tarefa</legend>
-		<form action="/Proj_Lista_Tarefas/action/incluir.php" method="POST">
-			<p>
-				<input type="text" placeholder="Adicionar uma Tarefa" "fH_titulo" />
-			</p>
-			<input type="submit" value="Adicionar" />
-		</form>
-		
-		
-	
-	</div>
+					<a href="/Proj_Lista_Tarefas/action/Logout.php"><h2>EXIT</h2></a>
+		<h1>HOME</h1>
+		<fieldset>
+			<legend> Nova Tarefa</legend>
+			<form action="/Proj_Lista_Tarefas/action/incluir.php" method="POST">
+				<p>
+					<input type="text" placeholder="Adicionar uma Tarefa" name="fH_titulo" />
+				</p>
+				<input type="submit" value="Adicionar" />
+			</form>
+		</div>
 <?php if (isset($_SESSION["erroAdicionarTarefa"])) {?>
 <p>
 <?php echo $_SESSION["erroAdicionarTarefa"];?>
-
-		
-		
-		
-		
-		
-		
-	
-	
 	<p>
 <?php } else if (isset($_SESSION["sucessoAdicionarTarefa"])){?>
-
-		
-		
-		
-		
-		
-		
-	
-	
 	<p>
 <?php echo $_SESSION["sucessoAdicionarTarefa"];?>
-
-		
-		
-		
-		
-		
-		
-	
-	
 	<p>
 <?php }?>
-	
-	
-	
-	
-	
-	
-	
-	
 	</fieldset>
 
 	<fieldset>
@@ -120,22 +78,26 @@ if ($SQLError == 0) {
 					<td><font color="blue" size="+2"><strong>Usuario:</strong></font></td>
 					<td><font color="blue" size="+2"><strong>Descrição Tarefa:</strong></font></td>
 					<td><font color="blue" size="+2"><strong>Status tarefa:</strong></font></td>
-					</tr>
+				</tr>
 			</thead>
 			<tbody>
 <?php foreach ($Tarefas as $t){?>
-<tr>
-					<td>	<input type="checkbox" name="IDs[]"
-						value="<?php echo $t->tarefas_finalizada = ("true");?>"></td>
-					<td>	<p>[<?php echo $t->usuario_id;?>]</p></td>
-					<td>	<p> <?php echo $t->tarefas_titulo;?></p></td>
-					<td>	<p> (<?php echo $t->tarefas_finalizada ? "Finalizada" : "em Aberto"; ?>) </p>
-<?php }?></td>
-			
-			
-			
+				<tr>
+
+					<td><input type="checkbox" name="IDs[]"
+						value="<?php echo $t->tarefas_finalizada = ("0");?>"> </td>
+					<td>
+						<p>[<?php echo $t->usuario_id;?>]</p>
+					</td>
+					<td>
+						<p> <?php echo $t->tarefas_titulo;?></p>
+					</td>
+					<td>
+						<p> (<?php echo $t->tarefas_finalizada ? "Finalizada" : "em Aberto"; ?>) </p>
+<?php }?> </td>
 			</tbody>
 		</table>
 	</fieldset>
+	
 </body>
 </html>

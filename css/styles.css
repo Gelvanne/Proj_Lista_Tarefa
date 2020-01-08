@@ -25,7 +25,7 @@ input {
 	outline: none;
 }
 ::-webkit-input-placeholder{
-	color: black; /* Codigo para deixar branco o placeholder (texto padrao dentro do input)*/
+	color:#808080; /* Codigo para deixar branco o placeholder (texto padrao dentro do input)*/
 }
 
 #corpo-form {
@@ -34,23 +34,32 @@ input {
 	margin: 130px auto 0px auto;
 	/*Centralizar usando o margin: 150px em cima auto (automatico do lado) 0px embaixo e auto (automático do outro lado) */
 }
+
+#corpo-form h1{
+	text-align: left; /* alinhar só a tag h1 do corpo do texto (Entrar)*/
+	padding: 20px;
+	color: black;
+}
+
 #corpo-form-cad{
 	/* background-color: grey; /* fundo no formulario só para nortear a construção*/
 	width: 420px; /* Largura da div*/
 	margin: 100px auto 0px auto;
 	/*Centralizar usando o margin: 150px em cima auto (automatico do lado) 0px embaixo e auto (automático do outro lado) */
 }
-#corpo-form h1{
-	text-align: left; /* alinhar só a tag h1 do corpo do texto (Entrar)*/
-	padding: 20px;
-	color: black;
-}
 #corpo-form-cad h1{
 	text-align: center; /* alinhar só a tag h1 do corpo do texto (Entrar)*/
 	padding: 20px;
 }
+
+#corpo-form-cad h2{
+	text-align:center;
+	color: blue;
+	display: block;
+	
+	}
 a{
-	color: black; /* Link da tag "A" alterando a cor branca*/
+	color: blue; /* Link da tag "A" alterando a cor branca*/
 	text-decoration: none; /* Link da tag "A" retirando o underline*/
 	text-align: center; /* alinhar texto da tag "A" não funciona sozinho porque precisa do display block que vai logo abaixo*/
 	display: block;
@@ -64,3 +73,22 @@ input[type=submit]{
 	border: none;  /*Tirando a borda preta do botão submit*/
 	cursor: pointer; /*Mostra a mãozinha quando posicionar em cima do submit*/
 }
+#MSG h3{	
+	padding: 25px;
+	border-radius: 3px;
+	color: #FFF;
+	background-color: rgba(107,35,142,0.25);
+	width: 420px; /* Largura da div*/
+	margin: auto auto 0px auto;
+	text-align: center;
+}
+#MSG_erro h3{	
+	padding: 25px;
+	border-radius: 3px;
+	color: #FFF;
+	background-color: rgba(255,0,0,0.25);
+	width: 420px; /* Largura da div*/
+	margin: auto auto 0px auto;
+	text-align: center;
+}
+
