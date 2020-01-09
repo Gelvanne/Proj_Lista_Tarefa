@@ -16,11 +16,16 @@ class usuario
 session_start();
 
 $usuario = $_SESSION["usuarioLogado"];
-
+/* var_dump($usuario);
+exit();*/
 
 if ($SQLError == 0) {
     $ResultadoTarefas = mysqli_query($SQL, "SELECT * FROM db_tarefas.tb_tarefas WHERE usuario_id = {$usuario->usuario_id}");
-      
+    /* $ResultadoTarefas = mysqli_query($SQL, "SELECT * FROM db_tarefas.tb_tarefas as T inner join db_tarefas.tb_usuarios as U where T.usuario_id  = {$usuario->usuario_id}");*/
+
+ /* var_dump($ResultadoTarefas);
+  exit();*/
+    
     $Tarefas = array();
         
     if ($ResultadoTarefas) {
@@ -56,15 +61,20 @@ if ($SQLError == 0) {
 				<input type="submit" value="Adicionar" />
 			</form>
 		</div>
+
+
 <?php if (isset($_SESSION["erroAdicionarTarefa"])) {?>
-<p>
+<div id="ErroTarefa">
 <?php echo $_SESSION["erroAdicionarTarefa"];?>
-	<p>
+	</div>
 <?php } else if (isset($_SESSION["sucessoAdicionarTarefa"])){?>
 	<p>
 <?php echo $_SESSION["sucessoAdicionarTarefa"];?>
 	<p>
 <?php }?>
+
+
+
 	</fieldset>
 
 	<fieldset>
@@ -87,7 +97,7 @@ if ($SQLError == 0) {
 					<td><input type="checkbox" name="IDs[]"
 						value="<?php echo $t->tarefas_finalizada = ("0");?>"> </td>
 					<td>
-						<p>[<?php echo $t->usuario_id;?>]</p>
+						<p>[<?php echo $usuario->usuario_nome;?>]</p>
 					</td>
 					<td>
 						<p> <?php echo $t->tarefas_titulo;?></p>

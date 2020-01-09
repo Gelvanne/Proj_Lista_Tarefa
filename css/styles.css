@@ -14,7 +14,7 @@ input {
 	display: block; /*Coloca os inputs um embaixo do outro.*/
 	height: 55px; /* Altura dos inputs */
 	width: 400px; /*largura dos inputs */
-	margin: 10px; /* espaÁamento entre os inputs*/
+	margin: 10px; /* espa√ßamento entre os inputs*/
 	border-radius: 30px; /* Borda arredondada*/
 	border: 1px solid black; /* Borda solida  da cor preta*/
 	font-size: 16pt; /* Ajustando o tamanho da fonte*/
@@ -29,26 +29,26 @@ input {
 }
 
 #corpo-form {
-	/* background-color: grey; /* fundo no formulario sÛ para nortear a construÁ„o*/
+	/* background-color: grey; /* fundo no formulario s√≥ para nortear a constru√ß√£o*/
 	width: 420px; /* Largura da div*/
 	margin: 130px auto 0px auto;
-	/*Centralizar usando o margin: 150px em cima auto (automatico do lado) 0px embaixo e auto (autom·tico do outro lado) */
+	/*Centralizar usando o margin: 150px em cima auto (automatico do lado) 0px embaixo e auto (autom√°tico do outro lado) */
 }
 
 #corpo-form h1{
-	text-align: left; /* alinhar sÛ a tag h1 do corpo do texto (Entrar)*/
+	text-align: left; /* alinhar s√≥ a tag h1 do corpo do texto (Entrar)*/
 	padding: 20px;
 	color: black;
 }
 
 #corpo-form-cad{
-	/* background-color: grey; /* fundo no formulario sÛ para nortear a construÁ„o*/
+	/* background-color: grey; /* fundo no formulario s√≥ para nortear a constru√ß√£o*/
 	width: 420px; /* Largura da div*/
 	margin: 100px auto 0px auto;
-	/*Centralizar usando o margin: 150px em cima auto (automatico do lado) 0px embaixo e auto (autom·tico do outro lado) */
+	/*Centralizar usando o margin: 150px em cima auto (automatico do lado) 0px embaixo e auto (autom√°tico do outro lado) */
 }
 #corpo-form-cad h1{
-	text-align: center; /* alinhar sÛ a tag h1 do corpo do texto (Entrar)*/
+	text-align: center; /* alinhar s√≥ a tag h1 do corpo do texto (Entrar)*/
 	padding: 20px;
 }
 
@@ -61,7 +61,7 @@ input {
 a{
 	color: blue; /* Link da tag "A" alterando a cor branca*/
 	text-decoration: none; /* Link da tag "A" retirando o underline*/
-	text-align: center; /* alinhar texto da tag "A" n„o funciona sozinho porque precisa do display block que vai logo abaixo*/
+	text-align: center; /* alinhar texto da tag "A" n√£o funciona sozinho porque precisa do display block que vai logo abaixo*/
 	display: block;
 }
 a:hover {
@@ -69,9 +69,9 @@ a:hover {
 }
 
 input[type=submit]{
-	background-color: #6a5acd; /*Trocando cor do bot„o submit*/
-	border: none;  /*Tirando a borda preta do bot„o submit*/
-	cursor: pointer; /*Mostra a m„ozinha quando posicionar em cima do submit*/
+	background-color: #6a5acd; /*Trocando cor do bot√£o submit*/
+	border: none;  /*Tirando a borda preta do bot√£o submit*/
+	cursor: pointer; /*Mostra a m√£ozinha quando posicionar em cima do submit*/
 }
 #MSG h3{	
 	padding: 25px;
@@ -83,6 +83,15 @@ input[type=submit]{
 	text-align: center;
 }
 #MSG_erro h3{	
+	padding: 25px;
+	border-radius: 3px;
+	color: #FFF;
+	background-color: rgba(255,0,0,0.25);
+	width: 420px; /* Largura da div*/
+	margin: auto auto 0px auto;
+	text-align: center;
+}
+#ErroTarefa{	
 	padding: 25px;
 	border-radius: 3px;
 	color: #FFF;
