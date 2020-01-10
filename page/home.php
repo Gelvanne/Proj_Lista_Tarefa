@@ -1,6 +1,7 @@
 <?php
 $SQL = mysqli_connect("localhost","db_tarefas","admin123");
 $SQLError = mysqli_connect_errno();
+$Editar = '<td><form action="/Proj_Lista_Tarefas/page/editar.php" method="POST"><input type="submit" value="EDITAR" ></form></td>';
 class usuario
 {
     
@@ -34,7 +35,7 @@ if ($SQLError == 0) {
                      
             while ($Tarefa = mysqli_fetch_object($ResultadoTarefas)) {
                 $Tarefas[] = $Tarefa;
-                
+                           
             }
         }
     }
@@ -50,29 +51,19 @@ if ($SQLError == 0) {
 </head>
 <body>
 	<div id="corpo-form-cad">
-					<a href="/Proj_Lista_Tarefas/action/Logout.php"><h2>EXIT</h2></a>
+		<a href="/Proj_Lista_Tarefas/action/Logout.php"><h2>EXIT</h2></a>
 		<h1>HOME</h1>
 		<fieldset>
 			<legend> Nova Tarefa</legend>
 			<form action="/Proj_Lista_Tarefas/action/incluir.php" method="POST">
 				<p>
-					<input type="text" placeholder="Adicionar uma Tarefa" name="fH_titulo" />
+					<input type="text" placeholder="Adicionar uma Tarefa"
+						name="fH_titulo" />
 				</p>
 				<input type="submit" value="Adicionar" />
 			</form>
-		</div>
-
-
-<?php if (isset($_SESSION["erroAdicionarTarefa"])) {?>
-<div id="ErroTarefa">
-<?php echo $_SESSION["erroAdicionarTarefa"];?>
+	
 	</div>
-<?php } else if (isset($_SESSION["sucessoAdicionarTarefa"])){?>
-	<p>
-<?php echo $_SESSION["sucessoAdicionarTarefa"];?>
-	<p>
-<?php }?>
-
 
 
 	</fieldset>
@@ -88,26 +79,37 @@ if ($SQLError == 0) {
 					<td><font color="blue" size="+2"><strong>Usuario:</strong></font></td>
 					<td><font color="blue" size="+2"><strong>Descrição Tarefa:</strong></font></td>
 					<td><font color="blue" size="+2"><strong>Status tarefa:</strong></font></td>
+					<td><font color="blue" size="+2"><strong>Editar</strong></font></td>
 				</tr>
 			</thead>
 			<tbody>
-<?php foreach ($Tarefas as $t){?>
+<?php foreach ($Tarefas as $t){ ?>
+								
 				<tr>
 
-					<td><input type="checkbox" name="IDs[]"
-						value="<?php echo $t->tarefas_finalizada = ("0");?>"> </td>
-					<td>
-						<p>[<?php echo $usuario->usuario_nome;?>]</p>
-					</td>
-					<td>
-						<p> <?php echo $t->tarefas_titulo;?></p>
-					</td>
-					<td>
-						<p> (<?php echo $t->tarefas_finalizada ? "Finalizada" : "em Aberto"; ?>) </p>
-<?php }?> </td>
+					<td><input type="checkbox" name="IDs[]" value="<?php echo $t->tarefas_id;?>" checked="checked"></form></td>
+					<td><p>[<?php echo $usuario->usuario_nome;?>]</p></td>
+					<td><p> <?php echo $t->tarefas_titulo;?></p></td>
+					<td><p> (<?php echo $t->tarefas_finalizada ? "Finalizada" : "em Aberto"; ?>) </p> </td>
+					<td><p><?php echo $Editar;?></p><?php }?></td>
+				</tr>
+			
 			</tbody>
 		</table>
 	</fieldset>
-	
+	<br><br>
+
 </body>
+
+<?php if (isset($_SESSION["erroAdicionarTarefa"])) {?>
+
+<font color="red" size="+2"><?php echo   $_SESSION["erroAdicionarTarefa"];?></font>
+
+<?php } else if (isset($_SESSION["sucessoAdicionarTarefa"])){?>
+
+<font color="green" size="+2"><?php echo   $_SESSION["sucessoAdicionarTarefa"];?></font>
+
+<?php }?>
+
+
 </html>
