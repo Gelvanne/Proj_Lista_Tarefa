@@ -1,7 +1,8 @@
 <?php
 $SQL = mysqli_connect("localhost","db_tarefas","admin123");
 $SQLError = mysqli_connect_errno();
-$Editar = '<td><form action="/Proj_Lista_Tarefas/page/editar.php" method="POST"><input type="submit" value="EDITAR" ></form></td>';
+$Editar = ' ';
+
 class usuario
 {
     
@@ -79,26 +80,23 @@ if ($SQLError == 0) {
 					<td><font color="blue" size="+2"><strong>Usuario:</strong></font></td>
 					<td><font color="blue" size="+2"><strong>Descrição Tarefa:</strong></font></td>
 					<td><font color="blue" size="+2"><strong>Status tarefa:</strong></font></td>
-					<td><font color="blue" size="+2"><strong>Editar</strong></font></td>
 				</tr>
 			</thead>
-			<tbody>
-<?php foreach ($Tarefas as $t){ ?>
+		<tbody>
+			<?php foreach ($Tarefas as $t){ ?>
 								
 				<tr>
-
-					<td><input type="checkbox" name="IDs[]" value="<?php echo $t->tarefas_id;?>" checked="checked"></form></td>
+				<form action="/Proj_Lista_Tarefas/page/editar.php" >
+					<td><input type="checkbox" name="IDs[]" value="<?php echo $t->tarefas_id;?>" checked="checked"></td>
 					<td><p>[<?php echo $usuario->usuario_nome;?>]</p></td>
 					<td><p> <?php echo $t->tarefas_titulo;?></p></td>
-					<td><p> (<?php echo $t->tarefas_finalizada ? "Finalizada" : "em Aberto"; ?>) </p> </td>
-					<td><p><?php echo $Editar;?></p><?php }?></td>
+					<td><p> (<?php echo $t->tarefas_finalizada ? "Finalizada" : "em Aberto"; ?>) </p> <?php }?> </td>
 				</tr>
-			
-			</tbody>
+				</tbody>
 		</table>
 	</fieldset>
 	<br><br>
-
+	 <input type="submit" value="EDITAR" ></form>
 </body>
 
 <?php if (isset($_SESSION["erroAdicionarTarefa"])) {?>
