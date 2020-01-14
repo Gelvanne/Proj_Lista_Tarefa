@@ -87,7 +87,7 @@ if ($SQLError == 0) {
 								
 				<tr>
 				<form action="/Proj_Lista_Tarefas/page/editar.php" method="POST" >
-					<td><input type="checkbox" name="IDs[]" value="<?php echo $t->tarefas_id;?>" checked="checked"></td>
+					<td><input type="checkbox" name="IDs[]" value="<?php echo $t->tarefas_id;?>" ></td>
 					<td><p>[<?php echo $usuario->usuario_nome;?>]</p></td>
 					<td><p> <?php echo $t->tarefas_titulo;?></p></td>
 					<td><p> (<?php echo $t->tarefas_finalizada ? "Finalizada" : "em Aberto"; ?>) </p> <?php }?> </td>
@@ -96,7 +96,7 @@ if ($SQLError == 0) {
 		</table>
 	</fieldset>
 	<br><br>
-	 <input type="submit" value="EDITAR" ></form>
+	 <input type="submit" value="Atualizar" ></form>
 </body>
 
 <?php if (isset($_SESSION["erroAdicionarTarefa"])) {?>
