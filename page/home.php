@@ -86,7 +86,7 @@ if ($SQLError == 0) {
 			<?php foreach ($Tarefas as $t){ ?>
 								
 				<tr>
-				<form action="/Proj_Lista_Tarefas/page/editar.php" >
+				<form action="/Proj_Lista_Tarefas/page/editar.php" method="POST" >
 					<td><input type="checkbox" name="IDs[]" value="<?php echo $t->tarefas_id;?>" checked="checked"></td>
 					<td><p>[<?php echo $usuario->usuario_nome;?>]</p></td>
 					<td><p> <?php echo $t->tarefas_titulo;?></p></td>
